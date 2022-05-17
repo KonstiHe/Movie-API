@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Documentation | MovieAPI</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="text-center">MyFlix API - Documentation</h1>
+      <h2 class="mt-5">Overview</h2>
+      <p>
+        The web application MyFlix will provide users with access to information
+        about different movies, directors, and genres by offering a set of
+        endpoints to achieve different results.<br />
+        Users will be able to sign up, update their personal information, and
+        create a list of their favorite movies.
+      </p>
+
+      <h3 class="mt-4">Endpoint Structure</h3>
+
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Requests</th>
+            <th scope="col">ULR</th>
+            <th scope="col">HTTP Method</th>
+            <th scope="col">Request Body Data Format</th>
+            <th scope="col">Response Body Data Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Return a list of all movies to the user.</td>
+            <td class="url">/movies</td>
+            <td class="method">GET</td>
+            <td>None</td>
+            <td>A JSON holding the data about all the movies.</td>
+          </tr>
+          <tr>
+            <td>
+              Return data about a single movie by title to the user.
+            </td>
+            <td class="url">/movies/:title</td>
+            <td class="method">GET</td>
+            <td>None</td>
+            <td>
+              A JSON object holding the data about a single movie, containing
+              description, genre, director, image Url.<br />
+              Example:
+            </td>
+          </tr>
+          <tr>
+            <td>Return info about a genre by name.</td>
+            <td class="url">/movies/:genre</td>
+            <td class="method">GET</td>
+            <td>None</td>
+            <td>
+              A JSON object holding the drescription of the genre.<br />
+              Example:
+            </td>
+          </tr>
+
+          <tr>
+            <td>Return data about a director by name.</td>
+            <td class="url">/movies/:directorname</td>
+            <td class="method">GET</td>
+            <td>None</td>
+            <td>
+              A JSON object holding the info about the director.<br />
+              Example:
+            </td>
+          </tr>
+
+          <tr>
+            <td>Allow new users to register.</td>
+            <td class="url">/register</td>
+            <td class="method">POST</td>
+            <td>
+              A JSON object holding data about the new user.<br />
+              Example:
+            </td>
+            <td>
+              A JSON object holding the data of the new added user, including a
+              generated unique id.<br />
+              Example:
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Allow users to update their user info.
+            </td>
+            <td class="url">/users/:Name</td>
+            <td class="method">PUT</td>
+            <td>
+              A JSON object holding the data to be updated.<br />
+              Example:
+            </td>
+            <td>
+              A JSON object holding the data of the user, included the updated
+              field.<br />
+              Example:
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Allow users to add a movie to their list of favorites.
+            </td>
+            <td class="url">
+              /users/:Name/movies/:MovieID
+            </td>
+            <td class="method">PUT</td>
+            <td>None</td>
+            <td>
+              A JSON object holding the data of the user, included the added
+              MovieID.<br />
+              Example:
+            </td>
+          </tr>
+          <tr>
+            <td>Allow users to add a movie to their Watch List.</td>
+            <td class="url">
+              /users/:username/watchlist/:newMovieId
+            </td>
+            <td class="method">PUT</td>
+            <td>None</td>
+            <td>
+              A message indicating that the movie has been successfully added to
+              the list of the user's watch list.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Allow users to remove a movie from their list of favorites.
+            </td>
+            <td class="url">
+              /users/:Name/movie/:MovieID
+            </td>
+            <td class="method">DELETE</td>
+            <td>None</td>
+            <td>
+              A JSON object holding the data of the user, included the updated
+              FavoriteMovies field.<br />
+              Example:
+            </td>
+          </tr>
+
+          <tr>
+            <td>Allow existing users to deregister.</td>
+            <td class="url">users/:Name</td>
+            <td class="method">DELETE</td>
+            <td>None</td>
+            <td>
+              A message indicating that the user has been successfully deleted.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer></footer>
+  </body>
+</html>
